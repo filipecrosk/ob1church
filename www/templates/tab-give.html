@@ -1,0 +1,25 @@
+<ion-view view-title="Give" class="page_give">
+  <ion-content>
+    <div class="cover">
+      <img src="img/give.png">
+    </div>
+    
+    <form ng-submit="submit(data)">
+      
+      <label>Amount ($)</label>
+      <input type="number" ng-model="data.amount"></input>
+
+      <button type="submit">GIVE</button>
+
+      <a class="recurring" href="#" onclick="window.open('http://ob1church.com/give/', '_system'); return false;">I want to make This Recurring</a>
+      <p>Will be redirect to our website</p>
+
+    </form>
+
+    <!-- PayPal Logo -->
+      <div class="paypal-logo">
+        <img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_secured_by_pp_2line.png" border="0" alt="Secured by PayPal">  
+      </div>
+    <!-- PayPal Logo -->
+  </ion-content>
+</ion-view>

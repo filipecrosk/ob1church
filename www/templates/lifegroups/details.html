@@ -1,0 +1,37 @@
+<ion-view view-title="{{group.title}}" class="page_lifegroups page_detail">
+  <ion-content>
+    <div class="cover">
+      <img src="img/lifegroups.png">
+    </div>
+    
+    <div class="buttons">
+      <button class="button" ng-click="questions()">QUESTIONS & TRANSCRIPT</button>
+      <button class="button" ng-click="login()">LEADER <i class="fa fa-lock"></i></button>
+    </div>
+
+    <div class="intro">
+      <img ng-src="{{group.image}}">
+      <h1>{{group.title}}</h1>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="article">
+      <div id="map-lifegroup" data-tap-disabled="true"></div>
+      
+      <p>
+        {{group.address}}
+      </p>
+      <p>
+        {{group.day}} | {{group.time}}
+      </p>
+      <p>
+        <strong>Leader</strong>
+        <br>
+        {{group.leader}}
+      </p>
+
+      <div class="bt_invite" ng-click="share()">INVITE</div>
+    </div>
+  </ion-content>
+</ion-view>

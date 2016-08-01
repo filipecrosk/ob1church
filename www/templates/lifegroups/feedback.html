@@ -1,0 +1,41 @@
+<ion-view view-title="Send Feedback" name="login-view" class="page_lifegroups page_feedback">
+  <ion-content class="padding">
+    <div class="cover">
+      <img src="img/lifegroups.png">
+    </div>
+    
+    <form name="feedbackForm" novalidate="" ng-submit="submit(data)">
+      <div class="item-input">
+        <label>How many people</label>
+        <select ng-model="data.people">
+          <option ng-repeat="n in range(1,50)">{{n}}</option>
+        </select>
+      </div>
+
+      <div class="item-input">
+        <label>How was the presence of GOD?</label>
+        <select ng-model="data.presence_of_god">
+          <option>Great</option>
+          <option>OK</option>
+          <option>Not really there</option>
+        </select>
+      </div>
+
+      <div class="item-input">
+        <label>As a leader, how are you feeling?</label>
+        <select ng-model="data.leader_feeling">
+          <option>Felling Encoraged</option>
+          <option>Felling Ok</option>
+          <option>Burning Out</option>
+        </select>
+      </div>
+
+      <div class="item-input">
+        <label>Any comments? Any help needed?</label>
+        <textarea rows="5" placeholder="About the group or about you" ng-model="data.comments"></textarea>
+      </div>
+      
+      <button ng-click="submit(data)" type="submit">SUBMIT</button>
+    </form>
+  </ion-content>
+</ion-view>

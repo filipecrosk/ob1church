@@ -1,0 +1,32 @@
+.modal-backdrop {
+  &.active {
+
+  }
+  .modal {
+    background: none;
+  }
+  .modal-backdrop-bg {
+    background: url('../img/bg_time.png') top center no-repeat;
+    background-size: cover;
+  }
+
+  .bar.bar-header {
+    background: $bg_transparent;
+
+    h1 {
+      font-family: 'GothamMedium';
+      font-size: 1em;
+    }
+
+    .button-clear {
+      .ion-close:before {
+        font-size: 1.2em;
+        color: $color_gray;
+      }
+    }
+  }
+
+  .scroll-content {
+    padding: 1em;
+  }
+}

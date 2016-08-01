@@ -1,0 +1,30 @@
+<div class="bar bar-header bar-dark">
+  <h1 class="title">bar-dark</h1>
+</div>
+
+<ion-view view-title="{{title}}" class="page_sermons page_serie">
+  <ion-content>
+    <div class="cover">
+      <a href="#/tab/sermons/{{serieId}}/{{sermons[0].id}}">
+        <span class="icon"></span>
+        <img src="{{sermons[0].image}}">
+      </a>
+    </div>
+
+    <div class="intro">
+      <img ng-src="{{img}}">
+      <h1>{{title}}</h1>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="sermon in sermons | orderBy: '-date'" type="item-text-wrap" href="#/tab/sermons/{{serieId}}/{{sermon.id}}">
+        <h2>{{sermon.title}}</h2>
+        <p>{{sermon.date | date : fullDate}} | {{sermon.author}}</p>
+        <p></p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

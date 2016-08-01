@@ -1,0 +1,33 @@
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+body {
+  font-family: 'GothamBook';
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1em;
+  color: $color_gray;
+}
+
+a {
+  text-decoration: none;
+  color: $color_gray;
+}
+
+.home-button {
+  i {
+    font-size: 2em;
+    line-height: 1.5em;
+  }
+}
+
+.bt_invite {
+  display: block;
+  background: $bg_transparent;
+  font-family: 'GothamMedium';
+  font-size: 1.8em;
+  line-height: 2em;
+  color: $color_red;
+  text-align: center;
+  text-decoration: none;
+  margin: 1em 0;
+}

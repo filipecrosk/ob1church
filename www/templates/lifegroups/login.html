@@ -1,0 +1,19 @@
+<ion-view view-title="Sign-In" name="login-view" class="page_lifegroups page_login">
+  <ion-content class="padding">
+    <div class="cover">
+      <img src="img/lifegroups.png">
+    </div>
+    
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Email" ng-model="data.email">
+      </label>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="data.password">
+      </label>
+    </div>
+    <button class="button button-block button-positive" ng-click="login(data)">Login</button>
+  </ion-content>
+</ion-view>

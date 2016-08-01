@@ -1,0 +1,37 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+  
+  <ion-tab title="home" icon-off="home" icon-on="home" href="#/tab/home" hidden="true">
+    <ion-nav-view name="tab-home"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="about" href="#/tab/about" hidden="true">
+    <ion-nav-view name="tab-about"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Sermons Tab -->
+  <ion-tab title="Sermons" icon-off="sermons" icon-on="sermons" href="#/tab/sermons">
+    <ion-nav-view name="tab-sermons"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Events Tab -->
+  <ion-tab title="Events" icon-off="events" icon-on="events" href="#/tab/events">
+    <ion-nav-view name="tab-events"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Give Tab -->
+  <ion-tab title="Give" icon-off="give" icon-on="give" href="#/tab/give">
+    <ion-nav-view name="tab-give"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Lifegroups Tab -->
+  <ion-tab title="Lifegroup" icon-off="lifegroup" icon-on="lifegroup" href="#/tab/lifegroups">
+    <ion-nav-view name="tab-lifegroups"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>

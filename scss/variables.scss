@@ -1,0 +1,53 @@
+$gotham-font-path:  "fonts" !default;
+
+@font-face {
+  font-family: 'GothamBook';
+  src: url('#{$gotham-font-path}/gothamhtf-book-webfont.eot');
+  src: url('#{$gotham-font-path}/gothamhtf-book-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$gotham-font-path}/gothamhtf-book-webfont.woff2') format('woff2'),
+       url('#{$gotham-font-path}/gothamhtf-book-webfont.woff') format('woff'),
+       url('#{$gotham-font-path}/gothamhtf-book-webfont.ttf') format('truetype'),
+       url('#{$gotham-font-path}/gothamhtf-book-webfont.svg#gotham_htfbook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamLight';
+  src: url('#{$gotham-font-path}/gothamhtf-light-webfont.eot');
+  src: url('#{$gotham-font-path}/gothamhtf-light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$gotham-font-path}/gothamhtf-light-webfont.woff2') format('woff2'),
+       url('#{$gotham-font-path}/gothamhtf-light-webfont.woff') format('woff'),
+       url('#{$gotham-font-path}/gothamhtf-light-webfont.ttf') format('truetype'),
+       url('#{$gotham-font-path}/gothamhtf-light-webfont.svg#gotham_htflight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamMedium';
+  src: url('#{$gotham-font-path}/gothamhtf-medium-webfont.eot');
+  src: url('#{$gotham-font-path}/gothamhtf-medium-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$gotham-font-path}/gothamhtf-medium-webfont.woff2') format('woff2'),
+       url('#{$gotham-font-path}/gothamhtf-medium-webfont.woff') format('woff'),
+       url('#{$gotham-font-path}/gothamhtf-medium-webfont.ttf') format('truetype'),
+       url('#{$gotham-font-path}/gothamhtf-medium-webfont.svg#gotham_htfmedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamXlight';
+  src: url('#{$gotham-font-path}/gothamhtf-xlight-webfont.eot');
+  src: url('#{$gotham-font-path}/gothamhtf-xlight-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$gotham-font-path}/gothamhtf-xlight-webfont.woff2') format('woff2'),
+       url('#{$gotham-font-path}/gothamhtf-xlight-webfont.woff') format('woff'),
+       url('#{$gotham-font-path}/gothamhtf-xlight-webfont.ttf') format('truetype'),
+       url('#{$gotham-font-path}/gothamhtf-xlight-webfont.svg#gotham_htfxlight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$bg_transparent: rgba(255,255,255,0.5);
+$color_gray: #4E5354;
+$color_red: #ED1C24;

@@ -1,0 +1,27 @@
+<div class="bar bar-header bar-dark">
+  <h1 class="title">bar-dark</h1>
+</div>
+
+<ion-view view-title="About" class="page_about">
+  <ion-content class="article">
+    <div class="header">
+      <img src="img/about_logo.png">  
+    </div>
+    
+    <div class="about__menu">
+      <ul>
+        <li>
+          <a href="#/tab/about/times" ng-click="navigateTo('app.tab.about.time',true)" class="button parking">
+            SERVICES TIMES
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <h3>Location:</h3>
+    <p>4790 Santa Monica Avenue San Diego, CA</p>
+    <div id="map" data-tap-disabled="true"></div>
+
+    <a href="#" class="bt_invite" ng-click="share()">INVITE</a>
+  </ion-content>
+</ion-view>

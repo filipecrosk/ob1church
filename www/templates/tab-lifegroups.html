@@ -1,0 +1,22 @@
+<ion-view view-title="Life Groups" class="page_lifegroups">
+  <ion-content>
+    <div class="cover">
+      <img src="img/lifegroups.png">
+    </div>
+
+    <div class="buttons">
+      <button class="button" ng-click="questions()">QUESTIONS & TRANSCRIPT</button>
+      <button class="button" ng-click="login()">LEADER <i class="fa fa-lock"></i></button>
+    </div>
+    
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="group in groups" type="item-text-wrap" href="#/tab/lifegroups/{{group.id}}">
+        <img ng-src="{{group.image}}">
+        <h2>{{group.title}}</h2>
+        <span>{{group.address}}<br>{{group.day}} | {{group.time}} </span>
+        <span class="distance">{{calculateDistance(group.location, currenLocation())}}mi away</span>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

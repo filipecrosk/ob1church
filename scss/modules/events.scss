@@ -1,0 +1,86 @@
+.page_events {
+  background: url('../img/bg_home.png') top center no-repeat;
+  background-size: cover;
+
+  #event-slide-box {
+    img { 
+      max-width:100%;
+      max-height:100%;
+    }
+    margin-bottom: 2em;
+  }
+
+  .list {
+    .item {
+      background: $bg_transparent;
+      border: none;
+      margin-bottom: 1em;
+
+      .item-content {
+        background: none;
+
+        h2 {
+          font-family: 'GothamBook';
+          font-size: 1.5em;
+          font-weight: normal;
+          color: #4E5354;
+          line-height: 1.5em;
+        }
+      }
+    }
+  }
+
+  &.page_detail {
+    .cover {
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    .article {
+      padding: 1em;
+
+      h1 {
+        font-family: 'GothamBook';
+        color: $color_gray;
+      }
+
+      div { 
+        font-family: 'GothamLight'
+      }
+
+      .html_content {
+        ol {
+          display: block;
+          list-style-type: decimal;
+          -webkit-margin-before: 1em;
+          -webkit-margin-after: 1em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+          -webkit-padding-start: 40px;
+
+          li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+          }
+        }
+
+        ul {
+          display: block;
+          list-style-type: disc;
+          -webkit-margin-before: 1em;
+          -webkit-margin-after: 1em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+          -webkit-padding-start: 40px;
+
+          li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+          }
+        }
+      }
+    }
+  }
+}

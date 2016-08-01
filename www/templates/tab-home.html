@@ -1,0 +1,43 @@
+<ion-view view-title="Dashboard" hide-nav-bar="true" class="page_home">
+  <ion-content class="">
+    <!--slider section-->
+    <ion-slide-box id="home-slide-box" show-pager="true" active-slide="0" auto-play="true" does-continue="true">
+      <ion-slide ng-repeat="event in events">
+        <div class="content">
+          <a href="#/tab/events/{{event.id}}">
+            <img src="{{event.image}}">
+          </a>
+        </div>
+      </ion-slide>
+    </ion-slide-box><!--end slider section-->
+    
+    <div class="home__menu">
+      <ul>
+        <li>
+          <a href="#/tab/about/times" ng-click="navigateTo('app.tab.about.times',true)">
+            <strong>SERVICES</strong>
+            Time and location 
+          </a>
+        </li>
+        <li>
+          <a href="#/tab/sermons" ng-click="navigateTo('app.tab.sermons',true)">
+            <strong>MESSAGES</strong>
+            Watch and listen to past messages
+          </a>
+        </li>
+        <li>
+          <a href="#/tab/lifegroups" ng-click="navigateTo('app.tab.lifegroups',true)">
+            <strong>LIFE GROUPS</strong>
+            Get connected into community
+          </a>
+        </li>
+        <li>
+          <a href="#/tab/give" ng-click="navigateTo('app.tab.give',true)">
+            <strong>GIVE</strong>
+            Partner to impact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

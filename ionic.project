@@ -1,0 +1,12 @@
+{
+  "name": "ob1church",
+  "app_id": "7ea13a99",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

@@ -1,0 +1,62 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{sermon.title}}" class="page_sermons page_detail">
+  <ion-content>
+    <div class="video-container">
+      <iframe ng-src="{{trustSrc(embedVideo)}}" frameborder="0" width="560" height="315"></iframe>
+    </div>
+
+    <div class="article">
+      <h1>{{sermon.title}}</h1>
+
+      <div class="options">
+        <ul>
+          <li ng-show="sermon.audio">
+            <div class="option_button" ng-click="showPlayer()">AUDIO ONLY</div>
+          </li>
+          <li>
+            <div class="option_button" ng-click="share()">SHARE</div>
+          </li>
+          <li ng-show="sermon.content">
+            <div class="option_button" ng-click="showContent()">TRANSCRIPT</div>
+          </li>
+          <li ng-show="sermon.study">
+            <div class="option_button" ng-click="showQuestions()">STUDY QUESTIONS</div>
+          </li>
+        </ul>
+      </div>
+
+      <ion-audio-track track="audioTrack" ng-show="showAudioPlayer">
+        <div class="list list-inset audio-player">
+          <!-- <div class="item item-thumbnail-left"> -->
+              <!-- <img src="{{audioTrack.art}}">
+              <h2>title: {{audioTrack.title}}</h2>
+              <p>{{audioTrack.artist}}</p> -->
+              <ion-audio-controls>
+                <a class="button button-icon icon" ion-audio-play></a>
+                <ion-spinner icon="ios"></ion-spinner>
+              </ion-audio-controls>
+          <!-- </div> -->
+          <!-- <div class="item">
+            <ion-audio-progress-bar track="audioTrack" display-time></ion-audio-progress-bar>
+          </div> -->
+        </div>
+      </ion-audio-track>
+
+      <div ng-hide="showStudy">
+        <hr>
+        <div ng-bind-html="sermon.content" class="html_content"></div>
+      </div>
+
+      <div ng-show="showStudy">
+        <hr>
+        <h3>Study Questions</h3>
+        <div ng-bind-html="sermon.study" class="html_content"></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

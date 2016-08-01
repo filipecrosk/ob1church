@@ -1,0 +1,42 @@
+.tabs {
+  &.tab-nav {
+    background: $bg_transparent;
+  }
+
+  .tab-item {
+    .icon {
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size:contain;
+
+      &.sermons {
+        background-image: url('../img/tabbar_sermons.png');
+      }
+
+      &.events {
+        background-image: url('../img/tabbar_events.png');
+      }
+
+      &.give {
+        background-image: url('../img/tabbar_give.png');
+      }
+
+      &.lifegroup {
+        background-image: url('../img/tabbar_lifegroup.png');
+      }
+    }
+
+    span {
+      font-family: 'GothamBook';
+      font-size: 1em;
+      text-transform: uppercase;
+      color: #4E5354;
+    }
+
+    &.tab-item-active {
+      span {
+        color: #000;
+      }
+    }
+  }
+}

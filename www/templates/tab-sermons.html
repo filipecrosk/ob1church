@@ -1,0 +1,24 @@
+<ion-view view-title="Sermons" class="page_sermons">
+  <ion-content>
+    <ion-refresher
+        pulling-text="Pull to refresh..."
+        on-refresh="refresh()">
+    </ion-refresher>
+
+    <div class="featured">
+      <a href="#/tab/sermons/{{series[0].id}}/{{series[0].sermons[0].id}}">
+        <img src="{{series[0].sermons[0].image}}">
+      </a>
+    </div>
+
+    <h1>SERIES</h1>
+
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="serie in series | orderBy: '-created_at'" type="item-text-wrap" href="#/tab/sermons/{{serie.id}}">
+        <img ng-src="{{serie.image}}">
+        <h2>{{serie.name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
