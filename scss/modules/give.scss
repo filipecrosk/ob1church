@@ -9,6 +9,16 @@
     }
   }
 
+  .article {
+    padding: 1em;
+
+    p {
+      font-size: 1em;
+      color: $color_gray;
+      line-height: 1.5;
+    }
+  }
+
   form {
     label {
       padding-left: 1em;
@@ -53,7 +63,7 @@
       font-family: 'GothamLight';
       font-size: 1em;
       color: $color_gray;
-      padding: 0.3em 0 0 1.2em;
+      text-align: center;
       font-style: italic;
     }
   }

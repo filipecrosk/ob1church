@@ -4,22 +4,17 @@
       <img src="img/give.png">
     </div>
     
-    <form ng-submit="submit(data)">
+    <div class="article">
       
-      <label>Amount ($)</label>
-      <input type="number" ng-model="data.amount"></input>
+      <p>
+        <i class="fa fa-external-link" aria-hidden="true"></i> You are about to leave the app to go to our website (ob1church.com/give).
+      </p>
 
-      <button type="submit">GIVE</button>
+      <p>
+        <i class="fa fa-ban" aria-hidden="true"></i> This donation service does not unlock additional content within the app.
+      </p>
 
-      <a class="recurring" href="#" onclick="window.open('http://ob1church.com/give/', '_system'); return false;">I want to make This Recurring</a>
-      <p>Will be redirect to our website</p>
-
-    </form>
-
-    <!-- PayPal Logo -->
-      <div class="paypal-logo">
-        <img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_secured_by_pp_2line.png" border="0" alt="Secured by PayPal">  
-      </div>
-    <!-- PayPal Logo -->
+      <a class="bt_invite" href="#" onclick="window.open('http://ob1church.com/give/', '_system'); return false;">Give Now</a>
+    </div>
   </ion-content>
 </ion-view>

@@ -12346,6 +12346,12 @@ a {
   .page_give .cover img {
     width: 100%;
     max-height: 100%; }
+  .page_give .article {
+    padding: 1em; }
+    .page_give .article p {
+      font-size: 1em;
+      color: #4E5354;
+      line-height: 1.5; }
   .page_give form label {
     padding-left: 1em;
     font-family: 'GothamMedium';
@@ -12381,7 +12387,7 @@ a {
     font-family: 'GothamLight';
     font-size: 1em;
     color: #4E5354;
-    padding: 0.3em 0 0 1.2em;
+    text-align: center;
     font-style: italic; }
   .page_give .paypal-logo {
     padding: 1em;
