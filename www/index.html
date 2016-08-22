@@ -14,7 +14,6 @@
     <script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
     <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
     <script src="cordova.js"></script>
-    <script src="js/paypal-mobile-js-helper.js"></script>
 
     <script src="lib/ionic-audio/dist/ion-audio.js"></script>
 
@@ -26,7 +25,7 @@
     <script src="js/services/lifeGroups.js"></script>
     <script src="js/services/EventsService.js"></script>
     <script src="js/services/SermonsService.js"></script>
-    <script src="js/services/PaypalService.js"></script>
+    <script src="js/services/customBackButton.js"></script>
 
     <!-- google maps javascript -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO96oRHLS32ioJ3s-eeHOYSiAAjPJ0NLk"></script>
@@ -36,7 +35,7 @@
       The nav bar that will be updated as we navigate between views.
     -->
     <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
+      <ion-nav-back-button ng-click="returnToEvents()">
       </ion-nav-back-button>
 
       <ion-nav-buttons side="secondary">

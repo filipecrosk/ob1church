@@ -23,21 +23,23 @@ angular.module('starter.controllers', [])
     //   // Error
     // });
 
-    $cordovaPush.register({
-      badge: true,
-      sound: true,
-      alert: true
-    }).then(function (result) {
-      // console.log('log - register', result);
-      UserService.registerDevice({type: "ios", token: result}).then(function () {
-        // $ionicLoading.hide();
-        // $state.go('tab.news');
+    if (window.cordova) {
+      $cordovaPush.register({
+        badge: true,
+        sound: true,
+        alert: true
+      }).then(function (result) {
+        // console.log('log - register', result);
+        UserService.registerDevice({type: "ios", token: result}).then(function () {
+          // $ionicLoading.hide();
+          // $state.go('tab.news');
+        }, function (err) {
+          // console.log(err);
+        });
       }, function (err) {
-        // console.log(err);
+        // console.log('reg device error', err);
       });
-    }, function (err) {
-      // console.log('reg device error', err);
-    });
+    }
   });
 
 
@@ -88,6 +90,11 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
+  $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+    console.log('log - beforeEnter');
+    viewData.enableBack = false;
+  });
+
   $ionicLoading.show({
     template: 'Loading...'
   });
@@ -104,7 +111,18 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('SermonsSerieCtrl', function($scope, $stateParams, Sermons, $ionicLoading) {
+.controller('SermonsSerieCtrl', function($scope, $state, $stateParams, Sermons, $ionicLoading, $rootScope, $ionicHistory) {
+  $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+    console.log('log - beforeEnter');
+    viewData.enableBack = true;
+  });
+
+  $rootScope.returnToEvents = function () { 
+    console.log("custom back to SermonsPage");
+    // $ionicHistory.goBack();
+    $state.go('tab.sermons');
+  };
+
   $ionicLoading.show({
     template: 'Loading...'
   });
@@ -115,17 +133,35 @@ angular.module('starter.controllers', [])
 
     $scope.sermons = serie.sermons;
     $scope.title = serie.name; 
-    $scope.img = serie.face;
+    $scope.image = serie.image;
     $scope.serieId = serie.id;
 
     $ionicLoading.hide();
   }); 
 })
 
-.controller('SermonsDetailCtrl', function($scope, $stateParams, Sermons, $sce, $cordovaSocialSharing, $ionicLoading, MediaManager) {
+.controller('SermonsDetailCtrl', function($scope, $state, $stateParams, Sermons, $sce, $cordovaSocialSharing, $ionicLoading, MediaManager, $rootScope, $ionicHistory) {
   $scope.trustSrc = function(src) {
     return $sce.trustAsResourceUrl(src);
   }
+
+  $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+    console.log('log - beforeEnter');
+    viewData.enableBack = true;
+  });
+  $scope.$on('$ionicView.beforeLeave', function (event, viewData) {
+    console.log('log - clearReturn');
+    $rootScope.returnToEvents = function () { 
+      console.log("clear bacButton");
+      $state.go('tab.sermons');
+    };
+  });
+
+  $rootScope.returnToEvents = function () { 
+    console.log("custom back to SeriesPage");
+    // $ionicHistory.goBack();
+    $state.go('tab.sermons-serie', { serieId: $stateParams.serieId});
+  };
 
   $ionicLoading.show({
     template: 'Loading...'
@@ -184,6 +220,11 @@ angular.module('starter.controllers', [])
 })
 
 .controller('EventsCtrl', function ($scope, Events, $ionicLoading, $ionicSlideBoxDelegate) {
+  $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+    console.log('log - hide back button');
+    viewData.enableBack = false;
+  });
+
   $ionicLoading.show({
     template: 'Loading...'
   });
@@ -202,7 +243,18 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('EventsDetailCtrl', function($scope, $stateParams, Events, $cordovaSocialSharing, $ionicLoading) {
+.controller('EventsDetailCtrl', function($scope, $state, $stateParams, Events, $cordovaSocialSharing, $ionicLoading, $rootScope, $ionicHistory) {
+  $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
+    console.log('log - beforeEnter');
+    viewData.enableBack = true;
+  });
+  
+  $rootScope.returnToEvents = function () { 
+    // insert whatever you want to do; $ionicHistory.goBack();
+    console.log("custom back");
+    $state.go('tab.events');
+  };
+
   $ionicLoading.show({
     template: 'Loading...'
   });
@@ -226,17 +278,8 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('GiveCtrl', function($scope, $state, $ionicLoading, PaypalService) {
+.controller('GiveCtrl', function($scope, $state, $ionicLoading) {
   $scope.data = {};
-
-  $scope.submit = function(data) {
-    console.log('log - amount', data.amount);
-    PaypalService.initPaymentUI().then(function () {
-      PaypalService.makePayment(data.amount, "Give").then(function(_return){
-        console.log('log - data', _return);
-      });
-    });
-  };
 })
 
 .controller('LifegroupsCtrl', function($scope, LifeGroups, $cordovaGeolocation, $state, Sermons, $ionicLoading) {
@@ -306,7 +349,12 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('LifeGroupDetailCtrl', function($scope, $stateParams, LifeGroups, $state, Sermons, $cordovaSocialSharing, $ionicLoading) {
+.controller('LifeGroupDetailCtrl', function($scope, $stateParams, LifeGroups, $state, Sermons, $cordovaSocialSharing, $ionicLoading, $rootScope, $ionicHistory) {
+  $rootScope.returnToEvents = function () { 
+    console.log("root back");
+    $ionicHistory.goBack();
+  };
+
   $ionicLoading.show({
     template: 'Loading...'
   });
@@ -374,7 +422,12 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('LifeGroupFeedbackCtrl', function($scope, $stateParams, LifeGroups, $state, Sermons, $cordovaSocialSharing, $ionicLoading, $ionicPopup) {
+.controller('LifeGroupFeedbackCtrl', function($scope, $stateParams, LifeGroups, $state, Sermons, $cordovaSocialSharing, $ionicLoading, $ionicPopup, $rootScope, $ionicHistory) {
+  $rootScope.returnToEvents = function () { 
+    console.log("root back");
+    $ionicHistory.goBack();
+  };
+
   $scope.data = {};
 
   if (!LifeGroups.current()) {
@@ -417,7 +470,12 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('LoginCtrl', function($scope, $stateParams, LifeGroups, $state, $ionicLoading, $ionicPopup) {
+.controller('LoginCtrl', function($scope, $stateParams, LifeGroups, $state, $ionicLoading, $ionicPopup, $rootScope, $ionicHistory) {
+  $rootScope.returnToEvents = function () { 
+    console.log("root back");
+    $ionicHistory.goBack();
+  };
+
   $scope.data = {};
   if (LifeGroups.current()) {
     $state.go('tab.lifegroups-feedback');

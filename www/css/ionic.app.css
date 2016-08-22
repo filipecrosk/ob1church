@@ -12089,7 +12089,7 @@ a {
       padding-right: 1em; }
     .page_sermons.page_serie .intro h1 {
       font-family: 'GothamMedium';
-      font-size: 2em;
+      font-size: 1.7em;
       line-height: 1em;
       color: #4E5354;
       display: inline-block;
@@ -12352,6 +12352,8 @@ a {
       font-size: 1em;
       color: #4E5354;
       line-height: 1.5; }
+      .page_give .article p.small-text {
+        font-size: 0.8em; }
   .page_give form label {
     padding-left: 1em;
     font-family: 'GothamMedium';

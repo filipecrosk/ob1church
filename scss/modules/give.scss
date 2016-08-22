@@ -16,6 +16,10 @@
       font-size: 1em;
       color: $color_gray;
       line-height: 1.5;
+
+      &.small-text {
+        font-size: 0.8em;
+      }
     }
   }
 
