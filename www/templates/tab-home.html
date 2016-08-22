@@ -1,10 +1,10 @@
 <ion-view view-title="Dashboard" hide-nav-bar="true" class="page_home">
   <ion-content class="">
     <!--slider section-->
-    <ion-slide-box id="home-slide-box" show-pager="true" active-slide="0" auto-play="true" does-continue="true">
+    <ion-slide-box id="home-slide-box" show-pager="true" auto-play="true" does-continue="true" ng-if="events">
       <ion-slide ng-repeat="event in events">
         <div class="content">
-          <a href="#/tab/events/{{event.id}}">
+          <a ui-sref="tab.events-detail({eventId: event.id})">
             <img src="{{event.image}}">
           </a>
         </div>
