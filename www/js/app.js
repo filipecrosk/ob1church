@@ -278,4 +278,12 @@ angular.module('starter', [
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/home');
 
+})
+
+.filter('hrefToJS', function ($sce, $sanitize) {
+  return function (text) {
+    var regex = /href="([\S]+)"/g;
+    var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_system')\"");
+    return $sce.trustAsHtml(newString);
+  }
 });

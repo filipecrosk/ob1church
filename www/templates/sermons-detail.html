@@ -49,13 +49,13 @@
 
       <div ng-hide="showStudy">
         <hr>
-        <div ng-bind-html="sermon.content" class="html_content"></div>
+        <div ng-bind-html="sermon.content | hrefToJS" class="html_content"></div>
       </div>
 
       <div ng-show="showStudy">
         <hr>
         <h3>Study Questions</h3>
-        <div ng-bind-html="sermon.study" class="html_content"></div>
+        <div ng-bind-html="sermon.study | hrefToJS" class="html_content"></div>
       </div>
     </div>
   </ion-content>

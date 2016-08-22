@@ -13,7 +13,7 @@
     <div class="article">
       <h1>{{event.title}}</h1>
 
-      <div ng-bind-html="event.content" class="html_content"></div>
+      <div ng-bind-html="event.content | hrefToJS" class="html_content"></div>
 
       <div class="bt_invite" ng-click="share()">INVITE</div>
     </div>
