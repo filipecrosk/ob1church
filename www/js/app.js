@@ -79,7 +79,8 @@ angular.module('starter', [
           }
 
           if (notification.body && notification.messageFrom) {
-              $cordovaDialogs.alert(notification.body, notification.messageFrom);
+              console.log('notification received with sucess - DO NOTHING');
+              // $cordovaDialogs.alert(notification.body, notification.messageFrom);
           }
           else $cordovaDialogs.alert(notification.alert, "Push Notification Received");
 
