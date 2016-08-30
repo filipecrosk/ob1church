@@ -6,7 +6,7 @@
     
     <form name="feedbackForm" novalidate="" ng-submit="submit(data)">
       <div class="item-input">
-        <label>How many people</label>
+        <label>How many people showed up this week?</label>
         <select ng-model="data.people">
           <option ng-repeat="n in range(1,50)">{{n}}</option>
         </select>
@@ -24,7 +24,7 @@
       <div class="item-input">
         <label>As a leader, how are you feeling?</label>
         <select ng-model="data.leader_feeling">
-          <option>Felling Encoraged</option>
+          <option>Felling Encouraged</option>
           <option>Felling Ok</option>
           <option>Burning Out</option>
         </select>
