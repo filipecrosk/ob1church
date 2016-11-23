@@ -32,18 +32,18 @@
 
       <ion-audio-track track="audioTrack" ng-show="showAudioPlayer">
         <div class="list list-inset audio-player">
-          <!-- <div class="item item-thumbnail-left"> -->
-              <!-- <img src="{{audioTrack.art}}">
-              <h2>title: {{audioTrack.title}}</h2>
-              <p>{{audioTrack.artist}}</p> -->
+          <div class="item item-thumbnail-left">
+              <img src="{{audioTrack.art}}">
+              <h2>{{audioTrack.title}}</h2>
+              <p>{{audioTrack.artist}}</p>
               <ion-audio-controls>
                 <a class="button button-icon icon" ion-audio-play></a>
-                <ion-spinner icon="ios"></ion-spinner>
+                <ion-spinner icon="ios">Loading</ion-spinner>
               </ion-audio-controls>
-          <!-- </div> -->
-          <!-- <div class="item">
+          </div>
+          <div class="item">
             <ion-audio-progress-bar track="audioTrack" display-time></ion-audio-progress-bar>
-          </div> -->
+          </div>
         </div>
       </ion-audio-track>
 

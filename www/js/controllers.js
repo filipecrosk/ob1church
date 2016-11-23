@@ -141,6 +141,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SermonsDetailCtrl', function($scope, $state, $stateParams, Sermons, $sce, $cordovaSocialSharing, $ionicLoading, MediaManager, $rootScope, $ionicHistory) {
+  $scope.audioTrack = {};
+
   $scope.trustSrc = function(src) {
     return $sce.trustAsResourceUrl(src);
   }
