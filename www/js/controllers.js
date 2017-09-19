@@ -550,7 +550,7 @@ angular.module('starter.controllers', [])
   }).then(function(modal) {
     $scope.modal = modal;
   });
-  
+
   $scope.openModal = function() {
     function initialize() {
       var myLatlng = new google.maps.LatLng(32.744195, -117.246638);
@@ -604,6 +604,14 @@ angular.module('starter.controllers', [])
   $scope.openGoogleMap = function (targetDestinationLocation) {
     window.open('comgooglemaps://?q=32.745549,-117.246724&zoom=15', '_system');
   };// End openGoogleMap
+
+  $scope.openAndroidMap = function(targetDestinationLocation) {
+    window.open('geo://32.745549,-117.246724?q=ob1church&zoom=15', '_system');
+  }
+
+  $scope.isAndroid = function() {
+    return ionic.Platform.isAndroid();
+  };
 
   $scope.share = function(){
     $cordovaSocialSharing

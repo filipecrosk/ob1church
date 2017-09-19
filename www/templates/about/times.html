@@ -16,8 +16,9 @@
       <button class="button parking" ng-click="openModal()">Parking information</button>
       <br>
       <h3>Directions:</h3>
-      <button class="button" ng-click="openIosMap()">Open Maps</button>
-      <button class="button" ng-click="openGoogleMap()">Open Google Maps</button>
+      <button ng-hide="isAndroid" class="button" ng-click="openIosMap()">Open Maps</button>
+      <button ng-hide="isAndroid" class="button" ng-click="openGoogleMap()">Open Google Maps</button>
+      <button ng-show="isAndroid" class="button" ng-click="openAndroidMap()">Open Maps</button>
     </div>
   </ion-content>
 </ion-view>

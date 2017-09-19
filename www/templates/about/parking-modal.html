@@ -18,8 +18,8 @@
 
     <div id="parking-map" data-tap-disabled="true"></div>
 
-    <button class="button" ng-click="openIosMap()">Open Maps</button>
-    <button class="button" ng-click="openGoogleMap()">Open Google Maps</button>
-    
+    <button ng-hide="isAndroid" class="button" ng-click="openIosMap()">Open Maps</button>
+    <button ng-hide="isAndroid" class="button" ng-click="openGoogleMap()">Open Google Maps</button>
+    <button ng-show="isAndroid" class="button" ng-click="openAndroidMap()">Open Maps</button>
   </ion-content>
 </ion-modal-view>
