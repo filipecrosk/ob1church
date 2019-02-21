@@ -1,0 +1,49 @@
+.page_home {
+  background-image: url('/assets/img/bg_home.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  --ion-background-color: transparent;
+
+  #home-slide-box {
+    margin-top: 1em;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .home__menu {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        margin-top: 1em;
+        &:last-child {
+          margin: none;
+        }
+        a {
+          font-family: 'GothamXlight';
+          font-size: 1.2em;
+          line-height: 0.9em;
+          display: block;
+          background: rgba(255,255,255,0.5);
+          padding: 0.8em 0.5em 0.5em 1em;
+          text-decoration: none;
+          color: #4E5354;
+          strong {
+            display: block;
+            margin-bottom: 0.5em;
+            font-family: 'GothamBook';
+            font-weight: normal;
+            font-size: 1.4em;
+          }
+
+          &:hover {
+            background: rgba(255,255,255,0.8);
+          }
+        }
+      }
+    }
+  }
+}
