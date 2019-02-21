@@ -8,42 +8,60 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../home/home.module#HomePageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'sermons',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../sermons/sermons.module#SermonsPageModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'events',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../events/events.module#EventsPageModule'
+          }
+        ]
+      },
+      {
+        path: 'give',
+        children: [
+          {
+            path: '',
+            loadChildren: '../give/give.module#GivePageModule'
+          }
+        ]
+      },
+      {
+        path: 'lifegroups',
+        children: [
+          {
+            path: '',
+            loadChildren: '../lifegroups/lifegroups.module#LifegroupsPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/sermons',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];
