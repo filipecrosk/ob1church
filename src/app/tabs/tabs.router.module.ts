@@ -12,8 +12,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../home/home.module#HomePageModule'
-          }
+            loadChildren: '../pages/home/home.module#HomePageModule' }
         ]
       },
       {
@@ -21,8 +20,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../sermons/sermons.module#SermonsPageModule'
-          }
+            loadChildren: '../pages/sermons/sermons.module#SermonsPageModule' }
         ]
       },
       {
@@ -30,12 +28,10 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../events/events.module#EventsPageModule'
-          },
+            loadChildren: '../pages/events/events.module#EventsPageModule' },
           {
             path: ':id',
-            loadChildren: '../events-detail/events-detail.module#EventsDetailPageModule'
-          }
+            loadChildren: '../pages/events-detail/events-detail.module#EventsDetailPageModule' }
         ]
       },
       {
@@ -43,8 +39,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../give/give.module#GivePageModule'
-          }
+            loadChildren: '../pages/give/give.module#GivePageModule' }
         ]
       },
       {
@@ -52,13 +47,12 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../lifegroups/lifegroups.module#LifegroupsPageModule'
-          }
+            loadChildren: '../pages/lifegroups/lifegroups.module#LifegroupsPageModule' }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/sermons',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]

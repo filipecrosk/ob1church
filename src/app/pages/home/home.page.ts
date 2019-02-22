@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
-import { EventsService } from '../services/events.service';
+import { EventsService } from '../../services/events.service';
 import { Observable } from 'rxjs';
 
 @Component({
