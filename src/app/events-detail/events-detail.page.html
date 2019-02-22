@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/" routerDirection="forward">
+        <fa-icon [icon]="faHome" class="buttons--home"></fa-icon>
+      </ion-button>
+    </ion-buttons>
+
     <ion-title>events-detail</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
 
+<ion-content padding>
+<div style="text-align:center">
+  <fa-icon [icon]="faHome"></fa-icon>
+</div>
 </ion-content>

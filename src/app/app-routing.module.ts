@@ -5,7 +5,7 @@ const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'events', loadChildren: './events/events.module#EventsPageModule' },
-  { path: 'events-detail', loadChildren: './events-detail/events-detail.module#EventsDetailPageModule' },
+  { path: 'events/:id', loadChildren: './events-detail/events-detail.module#EventsDetailPageModule' },
   { path: 'give', loadChildren: './give/give.module#GivePageModule' },
   { path: 'lifegroups', loadChildren: './lifegroups/lifegroups.module#LifegroupsPageModule' },
   { path: 'sermons', loadChildren: './sermons/sermons.module#SermonsPageModule' },

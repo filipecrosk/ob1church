@@ -1,1 +1,65 @@
+$home-active: url(/assets/img/tabbar_sermons.png);
+$home-inactive: url(/assets/img/tabbar_sermons.png);
+
+ion-icon {
+  &[class*="aw-"] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: transparent;
+    --ion-color-base: transparent !important;
+
+  }
+
+  &[class*="aw-sermons"] {
+    mask-image: $home-inactive;
+
+    .tab-button[aria-selected=true] & {
+      mask-image: $home-active;
+    }
+  }
+}
+// .tabs {
+//   &.tab-nav {
+//     background: $bg_transparent;
+//   }
+
+//   .tab-item {
+//     .icon {
+//       background-repeat: no-repeat;
+//       background-position: 50%;
+//       background-size: contain;
+
+//       &.sermons {
+//         background-image: url('../img/tabbar_sermons.png');
+//       }
+
+//       &.events {
+//         background-image: url('../img/tabbar_events.png');
+//       }
+
+//       &.give {
+//         background-image: url('../img/tabbar_give.png');
+//       }
+
+//       &.lifegroup {
+//         background-image: url('../img/tabbar_lifegroup.png');
+//       }
+//     }
+
+//     span {
+//       font-family: 'GothamBook';
+//       font-size: 1em;
+//       text-transform: uppercase;
+//       color: #4E5354;
+//     }
+
+//     &.tab-item-active {
+//       span {
+//         color: #000;
+//       }
+//     }
+//   }
+// }
+
 

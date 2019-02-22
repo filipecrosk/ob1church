@@ -1,44 +1,41 @@
 <ion-content padding class="page_home">
-  <!-- <ion-view view-title="Dashboard" hide-nav-bar="true" class="page_home"> -->
-      <!--slider section-->
-      <ion-slides id="home-slide-box" show-pager="true" auto-play="true" does-continue="true" *ngIf="events">
-        <ion-slide *ngFor="let event of events">
-          <div class="content">
-            <a ui-sref="tab.events-detail({eventId: event.id})">
-              <img src="{{event.image}}">
-            </a>
-          </div>
-        </ion-slide>
-      </ion-slides>
-      <!--end slider section-->
+  <!--slider section-->
+  <ion-slides id="home-slide-box" show-pager="true" auto-play="true" does-continue="true" *ngIf="events">
+    <ion-slide no-padding *ngFor="let event of events">
+      <ion-item button no-padding [routerLink]="['/tabs', 'events', event.id]" class="content" detail="false">
+        <img src="{{event.image}}" *ngIf="event.image != 'N/A'">
+      </ion-item>
+    </ion-slide>
+  </ion-slides>
+  <!--end slider section-->
 
-      <div class="home__menu">
-        <ul>
-          <li>
-            <a href="#/tab/about/times" ng-click="navigateTo('app.tab.about.times',true)">
-              <strong>SERVICES</strong>
-              Time and location
-            </a>
-          </li>
-          <li>
-            <a href="#/tab/sermons" ng-click="navigateTo('app.tab.sermons',true)">
-              <strong>MESSAGES</strong>
-              Watch and listen to past messages
-            </a>
-          </li>
-          <li>
-            <a href="#/tab/lifegroups" ng-click="navigateTo('app.tab.lifegroups',true)">
-              <strong>LIFE GROUPS</strong>
-              Get connected into community
-            </a>
-          </li>
-          <li>
-            <a href="#/tab/give" ng-click="navigateTo('app.tab.give',true)">
-              <strong>GIVE</strong>
-              Partner to impact
-            </a>
-          </li>
-        </ul>
-      </div>
+  <div class="home__menu">
+    <ul>
+      <li>
+        <a href="#/tab/about/times" ng-click="navigateTo('app.tab.about.times',true)">
+          <strong>SERVICES</strong>
+          Time and location
+        </a>
+      </li>
+      <li>
+        <a href="#/tab/sermons" ng-click="navigateTo('app.tab.sermons',true)">
+          <strong>MESSAGES</strong>
+          Watch and listen to past messages
+        </a>
+      </li>
+      <li>
+        <a href="#/tab/lifegroups" ng-click="navigateTo('app.tab.lifegroups',true)">
+          <strong>LIFE GROUPS</strong>
+          Get connected into community
+        </a>
+      </li>
+      <li>
+        <a href="#/tab/give" ng-click="navigateTo('app.tab.give',true)">
+          <strong>GIVE</strong>
+          Partner to impact
+        </a>
+      </li>
+    </ul>
+  </div>
 
 </ion-content>
