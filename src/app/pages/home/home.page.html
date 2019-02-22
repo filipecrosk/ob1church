@@ -1,12 +1,18 @@
 <ion-content padding class="page_home">
   <!--slider section-->
-  <ion-slides id="home-slide-box" show-pager="true" auto-play="true" does-continue="true" *ngIf="events">
+  <ion-slides id="home-slide-box" show-pager="true" auto-play="true" does-continue="true" *ngIf="events; else blankModel">
     <ion-slide no-padding *ngFor="let event of events">
       <ion-item button no-padding [routerLink]="['/tabs', 'events', event.id]" class="content" detail="false">
         <img src="{{event.image}}" *ngIf="event.image != 'N/A'">
       </ion-item>
     </ion-slide>
   </ion-slides>
+  
+  <ng-template id="home-slide-box" #blankModel>
+    <ion-item class="content" detail="false">
+      <img src="/assets/img/home_top_image.png">
+    </ion-item>
+  </ng-template>
   <!--end slider section-->
 
   <div class="home__menu">
@@ -18,7 +24,7 @@
         </a>
       </li>
       <li>
-        <a href="#/tab/sermons" ng-click="navigateTo('app.tab.sermons',true)">
+        <a href="#/tab/sermons" [routerLink]="['/tabs', 'sermons']">
           <strong>MESSAGES</strong>
           Watch and listen to past messages
         </a>
