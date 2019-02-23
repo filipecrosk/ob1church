@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'lifegroups', loadChildren: './pages/lifegroups/lifegroups.module#LifegroupsPageModule' },
   { path: 'sermons', loadChildren: './pages/sermons/sermons.module#SermonsPageModule' },
   { path: 'sermons-series', loadChildren: './pages/sermons-series/sermons-series.module#SermonsSeriesPageModule' },
-  { path: 'sermons-detail', loadChildren: './pages/sermons-detail/sermons-detail.module#SermonsDetailPageModule' }
+  { path: 'sermons-detail', loadChildren: './pages/sermons-detail/sermons-detail.module#SermonsDetailPageModule' },
+  { path: 'times', loadChildren: './pages/about/times/times.module#TimesPageModule' }
 ];
 @NgModule({
   imports: [

@@ -1,3 +1,5 @@
+@import '../../theme/variables';
+
 $home-active: url(/assets/img/tabbar_sermons.png);
 $home-inactive: url(/assets/img/tabbar_sermons.png);
 
@@ -19,47 +21,51 @@ ion-icon {
     }
   }
 }
-// .tabs {
-//   &.tab-nav {
-//     background: $bg_transparent;
-//   }
+.tabs {
+  background: $bg_transparent;
+  --ion-background-color: $bg_transparent;
+  
+  &.tab-nav {
+    background: $bg_transparent;
+    // --ion-background-color: transparent;
+  }
 
-//   .tab-item {
-//     .icon {
-//       background-repeat: no-repeat;
-//       background-position: 50%;
-//       background-size: contain;
+  .tab-item {
+    .icon {
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: contain;
 
-//       &.sermons {
-//         background-image: url('../img/tabbar_sermons.png');
-//       }
+      &.sermons {
+        background-image: url('/assets/img/tabbar_sermons.png');
+      }
 
-//       &.events {
-//         background-image: url('../img/tabbar_events.png');
-//       }
+      &.events {
+        background-image: url('/assets/img/tabbar_events.png');
+      }
 
-//       &.give {
-//         background-image: url('../img/tabbar_give.png');
-//       }
+      &.give {
+        background-image: url('/assets/img/tabbar_give.png');
+      }
 
-//       &.lifegroup {
-//         background-image: url('../img/tabbar_lifegroup.png');
-//       }
-//     }
+      &.lifegroup {
+        background-image: url('/assets/img/tabbar_lifegroup.png');
+      }
+    }
 
-//     span {
-//       font-family: 'GothamBook';
-//       font-size: 1em;
-//       text-transform: uppercase;
-//       color: #4E5354;
-//     }
+    span {
+      font-family: 'GothamBook';
+      font-size: 1em;
+      text-transform: uppercase;
+      color: #4E5354;
+    }
 
-//     &.tab-item-active {
-//       span {
-//         color: #000;
-//       }
-//     }
-//   }
-// }
+    &.tab-item-active {
+      span {
+        color: #000;
+      }
+    }
+  }
+}
 
 

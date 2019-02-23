@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/" routerDirection="forward">
+        <fa-icon [icon]="faHome" class="buttons--home"></fa-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Services Times</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="page_about page_times">
+  <div class="article">
+    <h1 class="title">
+      <span>SUNDAY MORNINGS</span>
+    </h1>
+    <p>9:00<br><span>&</span><br>10:45</p>
+
+    <button class="button parking" (click)="share()">Invite</button>
+
+    <button class="button parking" (click)="openModal()">Parking information</button>
+    <br>
+    <h3>Directions:</h3>
+    <button *ngIf="isIos" class="button" (click)="openIosMap()">Open Maps</button>
+    <button *ngIf="isIos" class="button" (click)="openGoogleMap()">Open Google Maps</button>
+    <button *ngIf="isAndroid" class="button" (click)="openAndroidMap()">Open Maps</button>
+  </div>
+</ion-content>

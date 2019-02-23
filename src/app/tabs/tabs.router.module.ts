@@ -51,6 +51,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'times',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/about/times/times.module#TimesPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
