@@ -1,6 +1,9 @@
 {
   "name": "ob1church",
-  "app_id": "7ea13a99",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1",
   "gulpStartupTasks": [
     "sass",
     "watch"
@@ -9,8 +12,5 @@
     "www/**/*",
     "!www/lib/**/*"
   ],
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic1"
+  "id": "7ea13a99"
 }
