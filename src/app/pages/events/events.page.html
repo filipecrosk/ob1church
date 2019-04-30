@@ -1,9 +1,35 @@
-<ion-header>
+<ion-header class="header--transparent">
   <ion-toolbar>
-    <ion-title>events</ion-title>
+    <ion-title>Events</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/" routerDirection="forward">
+        <fa-icon [icon]="faHome" class="buttons--home"></fa-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content no-padding class="page_events">
+  <!--slider section-->
+  <ion-slides id="home-slide-box" show-pager="true" auto-play="true" does-continue="true"
+    *ngIf="events; else blankModel">
+    <ion-slide no-padding *ngFor="let event of events">
+      <ion-item button no-padding [routerLink]="['/tabs', 'events', event.id]" class="content" detail="false">
+        <img src="{{event.image}}" *ngIf="event.image != 'N/A'">
+      </ion-item>
+    </ion-slide>
+  </ion-slides>
+  <!--end slider section-->
 
+  <ion-refresher pulling-text="Pull to refresh..." on-refresh="refresh()">
+  </ion-refresher>
+
+  <ion-list no-padding>
+    <ion-item no-padding class="item-remove-animate item-icon-right" *ngFor="let event of events" type="item-text-wrap"
+      [routerLink]="['/tabs', 'events', event.id]">
+      <h2>{{event.title}}</h2>
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </ion-item>
+  </ion-list>
 </ion-content>

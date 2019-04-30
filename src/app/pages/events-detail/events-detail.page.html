@@ -1,7 +1,7 @@
-<ion-header>
+<ion-header class="header--transparent">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button color="dark" default-href="/tabs/events" text="Events"></ion-back-button>
     </ion-buttons>
 
     <ion-buttons slot="end">
@@ -10,13 +10,21 @@
       </ion-button>
     </ion-buttons>
 
-    <ion-title>events-detail</ion-title>
+    <ion-title *ngIf="event; else blankModel">{{event.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content padding>
-<div style="text-align:center">
-  <fa-icon [icon]="faHome"></fa-icon>
-</div>
+<ion-content no-padding class="page_events page_detail" *ngIf="event; else blankModel">
+  <div class="cover">
+    <img src="{{event.image}}" *ngIf="event.image != 'N/A'">
+  </div>
+
+  <div class="article">
+    <h1>{{event.title}}</h1>
+
+    <div [innerHTML]="event.content | hrefToJS" class="html_content"></div>
+
+    <div class="bt_invite" ng-click="share()">INVITE</div>
+  </div>
 </ion-content>

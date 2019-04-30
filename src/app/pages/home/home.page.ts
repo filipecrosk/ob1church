@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
-import { EventsService } from '../../services/events.service';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from "@angular/core";
+import { LoadingController } from "@ionic/angular";
+import { EventsService } from "../../services/events.service";
+import { Observable } from "rxjs";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  selector: "app-home",
+  templateUrl: "./home.page.html",
+  styleUrls: ["./home.page.scss"]
 })
 export class HomePage implements OnInit {
-
   events: Observable<any>;
 
-  constructor(public api: EventsService, public loadingController: LoadingController) { }
+  constructor(
+    public api: EventsService,
+    public loadingController: LoadingController
+  ) {}
 
   ngOnInit() {
     this.getData();
@@ -20,18 +22,17 @@ export class HomePage implements OnInit {
 
   async getData() {
     const loading = await this.loadingController.create({
-      message: 'Loading'
+      message: "Loading"
     });
     await loading.present();
-    this.api.getAll()
-      .subscribe(res => {
-        console.log(res);
+    this.api.getAll().subscribe(
+      res => {
         this.events = res;
         loading.dismiss();
-      }, err => {
-        console.log(err);
+      },
+      err => {
         loading.dismiss();
-      });
+      }
+    );
   }
-
 }

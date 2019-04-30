@@ -1,17 +1,18 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { Routes, RouterModule } from "@angular/router";
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from "@ionic/angular";
 
-import { EventsDetailPage } from './events-detail.page';
+import { EventsDetailPage } from "./events-detail.page";
+import { PipesModule } from "../../pipes/href-to-js.module";
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: EventsDetailPage
   }
 ];
@@ -22,7 +23,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    FontAwesomeModule
+    FontAwesomeModule,
+    PipesModule
   ],
   declarations: [EventsDetailPage]
 })

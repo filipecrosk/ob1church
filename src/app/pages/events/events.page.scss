@@ -1,0 +1,107 @@
+$bg_transparent: rgba(255, 255, 255, 0.5);
+$color_gray: #4E5354;
+$color_red: #ED1C24;
+
+.header--transparent {
+  background: url('/assets/img/bg_home.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  --ion-background-color: transparent;
+}
+
+ion-toolbar {
+  --background: transparent;
+  --ion-color-base: transparent !important;
+}
+
+.page_events {
+  background: url('/assets/img/bg_home.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  --ion-background-color: transparent;
+
+  #event-slide-box {
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    margin-bottom: 2em;
+  }
+
+  .list {
+    .item {
+      background: $bg_transparent;
+      border: none;
+      margin-bottom: 1em;
+
+      .item-content {
+        background: none;
+
+        h2 {
+          font-family: 'GothamBook';
+          font-size: 1.5em;
+          font-weight: normal;
+          color: #4E5354;
+          line-height: 1.5em;
+        }
+      }
+    }
+  }
+
+  &.page_detail {
+    .cover {
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    .article {
+      padding: 1em;
+
+      h1 {
+        font-family: 'GothamBook';
+        color: $color_gray;
+      }
+
+      div {
+        font-family: 'GothamLight'
+      }
+
+      .html_content {
+        line-height: 1.5em;
+
+        ol {
+          display: block;
+          list-style-type: decimal;
+          -webkit-margin-before: 1em;
+          -webkit-margin-after: 1em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+          -webkit-padding-start: 40px;
+
+          li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+          }
+        }
+
+        ul {
+          display: block;
+          list-style-type: disc;
+          -webkit-margin-before: 1em;
+          -webkit-margin-after: 1em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+          -webkit-padding-start: 40px;
+
+          li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+          }
+        }
+      }
+    }
+  }
+}
