@@ -1,8 +1,9 @@
 {
-  "name": "ob1",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "name": "ob1church",
+  "version": "1.2.0",
+  "description": "ob1church: An Ionic project",
+  "author": "Filipe Bragança @filipecrosk",
+  "homepage": "https://mobile.ob1church.com/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -26,7 +27,7 @@
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/splash-screen": "^5.0.0",
     "@ionic-native/status-bar": "^5.0.0",
-    "@ionic/angular": "^4.0.0",
+    "@ionic/angular": "^4.3.1",
     "cordova-ios": "4.5.5",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-inappbrowser": "3.0.0",
@@ -37,7 +38,7 @@
     "cordova-plugin-whitelist": "^1.3.3",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
-    "rxjs": "~6.3.3",
+    "rxjs": "~6.5.1",
     "zone.js": "~0.8.29"
   },
   "devDependencies": {
@@ -66,7 +67,6 @@
     "tslint": "~5.12.0",
     "typescript": "~3.1.6"
   },
-  "description": "An Ionic project",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
