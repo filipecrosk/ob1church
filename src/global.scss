@@ -101,3 +101,7 @@ a {
   text-decoration: none;
   margin: 1em 0;
 }
+
+ion-item {
+  --ion-safe-area-right: 0;
+}
