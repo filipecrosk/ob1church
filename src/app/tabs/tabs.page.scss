@@ -1,71 +1,69 @@
 @import '../../theme/variables';
 
-$home-active: url(/assets/img/tabbar_sermons.png);
-$home-inactive: url(/assets/img/tabbar_sermons.png);
-
 ion-icon {
-  &[class*="aw-"] {
-    mask-size: contain;
-    mask-position: 50% 50%;
-    mask-repeat: no-repeat;
-    background: transparent;
-    --ion-color-base: transparent !important;
+  mask-size: cover;
+  mask-position: 50% 50%;
+  mask-repeat: no-repeat;
+  background: transparent;
+  --ion-color-base: transparent !important;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
 
+  &[ng-reflect-name="icon-sermons"] {
+    background-image: url('/assets/img/tabbar_sermons.png');
+
+    &[ng-reflect-is-active="true"] {
+      background-image: url('/assets/img/tabbar_sermons.png');
+    }
   }
 
-  &[class*="aw-sermons"] {
-    mask-image: $home-inactive;
+  &[ng-reflect-name="icon-events"] {
+    background-image: url('/assets/img/tabbar_events.png');
 
-    .tab-button[aria-selected=true] & {
-      mask-image: $home-active;
+    &[ng-reflect-is-active="true"] {
+      background-image: url('/assets/img/tabbar_events.png');
+    }
+  }
+
+  &[ng-reflect-name="icon-give"] {
+    background-image: url('/assets/img/tabbar_give.png');
+
+    &[ng-reflect-is-active="true"] {
+      background-image: url('/assets/img/tabbar_give.png');
+    }
+  }
+
+  &[ng-reflect-name="icon-lifegroup"] {
+    background-image: url('/assets/img/tabbar_lifegroup.png');
+
+    &[ng-reflect-is-active="true"] {
+      background-image: url('/assets/img/tabbar_lifegroup.png');
     }
   }
 }
+
 .tabs {
   background: $bg_transparent;
   --ion-background-color: $bg_transparent;
-  
+
   &.tab-nav {
     background: $bg_transparent;
     // --ion-background-color: transparent;
   }
 
-  .tab-item {
-    .icon {
-      background-repeat: no-repeat;
-      background-position: 50%;
-      background-size: contain;
-
-      &.sermons {
-        background-image: url('/assets/img/tabbar_sermons.png');
-      }
-
-      &.events {
-        background-image: url('/assets/img/tabbar_events.png');
-      }
-
-      &.give {
-        background-image: url('/assets/img/tabbar_give.png');
-      }
-
-      &.lifegroup {
-        background-image: url('/assets/img/tabbar_lifegroup.png');
-      }
-    }
-
-    span {
+  ion-tab-button {
+    ion-label {
       font-family: 'GothamBook';
       font-size: 1em;
       text-transform: uppercase;
       color: #4E5354;
     }
 
-    &.tab-item-active {
-      span {
+    &.tab-selected {
+      ion-label {
         color: #000;
       }
     }
   }
 }
-
-
