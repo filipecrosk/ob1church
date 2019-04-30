@@ -1,5 +1,7 @@
 {
   "name": "ob1",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
