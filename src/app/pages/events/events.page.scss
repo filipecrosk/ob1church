@@ -20,31 +20,17 @@ ion-toolbar {
   background-size: cover;
   --ion-background-color: transparent;
 
-  #event-slide-box {
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
+  .events-list {
+    ion-item {
+      --inner-padding-start: 1em;
+      font-family: 'GothamBook';
+      font-size: 1.5em;
+      font-weight: normal;
+      color: #4E5354;
+      line-height: 1.5em;
 
-    margin-bottom: 2em;
-  }
-
-  .list {
-    .item {
-      background: $bg_transparent;
-      border: none;
-      margin-bottom: 1em;
-
-      .item-content {
-        background: none;
-
-        h2 {
-          font-family: 'GothamBook';
-          font-size: 1.5em;
-          font-weight: normal;
-          color: #4E5354;
-          line-height: 1.5em;
-        }
+      h2 {
+        margin: 15px 0;
       }
     }
   }

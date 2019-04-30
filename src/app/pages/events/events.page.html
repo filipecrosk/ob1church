@@ -25,9 +25,9 @@
   <ion-refresher pulling-text="Pull to refresh..." on-refresh="refresh()">
   </ion-refresher>
 
-  <ion-list no-padding>
-    <ion-item no-padding class="item-remove-animate item-icon-right" *ngFor="let event of events" type="item-text-wrap"
-      [routerLink]="['/tabs', 'events', event.id]">
+  <ion-list class="events-list" no-padding>
+    <ion-item no-padding class="events-list__item item-remove-animate item-icon-right" *ngFor="let event of events"
+      type="item-text-wrap" [routerLink]="['/tabs', 'events', event.id]">
       <h2>{{event.title}}</h2>
       <i class="icon ion-chevron-right icon-accessory"></i>
     </ion-item>
