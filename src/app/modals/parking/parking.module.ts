@@ -5,14 +5,12 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { IonicModule } from "@ionic/angular";
 
-import { TimesPage } from "./times.page";
-
-import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { ParkingPage } from "./parking.page";
 
 const routes: Routes = [
   {
     path: "",
-    component: TimesPage
+    component: ParkingPage
   }
 ];
 
@@ -21,9 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
-    FontAwesomeModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [TimesPage]
+  declarations: [ParkingPage]
 })
-export class TimesPageModule {}
+export class ParkingPageModule {}

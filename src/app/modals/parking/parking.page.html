@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="myDismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Parking Information</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="modal-park">
+  <h1>
+    <ion-icon name="car"></ion-icon> PLACES TO PARK:
+  </h1>
+
+  <p>
+    1. Street parking is available on both Sunset Cliffs and Santa Monica Ave.
+  </p>
+  <p>
+    2. The OB Elementary School parking lot is open from 8a-1p
+  </p>
+  <p>
+    The entrance is on Newport Ave.
+  </p>
+
+  <div id="parking-map" data-tap-disabled="true"></div>
+
+  <div class="buttons">
+    <button *ngIf="isIos" class="button" (click)="openIosMap()">Open Maps</button>
+    <button *ngIf="isIos" class="button" (click)="openGoogleMap()">Open Google Maps</button>
+    <button *ngIf="isAndroid" class="button" (click)="openAndroidMap()">Open Maps</button>
+  </div>
+</ion-content>

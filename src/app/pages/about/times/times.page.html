@@ -26,8 +26,11 @@
     <button class="button parking" (click)="openModal()">Parking information</button>
     <br>
     <h3>Directions:</h3>
-    <button *ngIf="isIos" class="button" (click)="openIosMap()">Open Maps</button>
-    <button *ngIf="isIos" class="button" (click)="openGoogleMap()">Open Google Maps</button>
-    <button *ngIf="isAndroid" class="button" (click)="openAndroidMap()">Open Maps</button>
+
+    <div class="buttons">
+      <button *ngIf="isIos" class="button" (click)="openIosMap()">Open Maps</button>
+      <button *ngIf="isIos" class="button" (click)="openGoogleMap()">Open Google Maps</button>
+      <button *ngIf="isAndroid" class="button" (click)="openAndroidMap()">Open Maps</button>
+    </div>
   </div>
 </ion-content>
