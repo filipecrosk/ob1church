@@ -1,0 +1,96 @@
+@import "../../../theme/variables.scss";
+
+.header--transparent {
+  background: url('/assets/img/bg_home.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  --ion-background-color: transparent;
+}
+
+ion-toolbar {
+  --background: transparent;
+  --ion-color-base: transparent !important;
+}
+
+.page_give {
+  background: url('/assets/img/bg_home.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  --ion-background-color: transparent;
+
+  .cover {
+    img {
+      width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .article {
+    padding: 1em;
+
+    p {
+      font-size: 1em;
+      color: $color_gray;
+      line-height: 1.5;
+
+      &.small-text {
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  form {
+    label {
+      padding-left: 1em;
+      font-family: 'GothamMedium';
+      font-size: 1em;
+      color: $color_gray;
+      margin-top: 0.8em;
+      display: inline-block;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"] {
+      width: 120px;
+      background: $bg_transparent;
+      padding: 0 1em;
+      margin-left: 1em
+    }
+
+    button[type="submit"],
+    a.recurring {
+      width: 90%;
+      background: $bg_transparent;
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      border: none;
+      font-family: 'GothamBook';
+      font-size: 1.2em;
+      color: $color_red;
+      line-height: 2em;
+      margin-top: 1em;
+      text-align: center;
+    }
+
+    a.recurring {
+      font-size: 1em;
+      color: $color_gray;
+    }
+
+    p {
+      font-family: 'GothamLight';
+      font-size: 1em;
+      color: $color_gray;
+      text-align: center;
+      font-style: italic;
+    }
+  }
+
+  .paypal-logo {
+    padding: 1em;
+    text-align: right;
+  }
+}
