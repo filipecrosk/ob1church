@@ -1,9 +1,50 @@
-<ion-header>
+<ion-header class="header--transparent">
   <ion-toolbar>
-    <ion-title>sermons-series</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" defaultHref="/tabs/sermons" text="Sermons"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/" routerDirection="forward">
+        <fa-icon [icon]="faHome" class="buttons--home"></fa-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title *ngIf="series; else blankModel">{{series.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
 
+<ion-content no-padding class="page_sermons page_series" *ngIf="series; else blankModel">
+  <div class="cover" *ngIf="sermons">
+    <a href="#" [routerLink]="['/tabs/sermons', seriesId, sermons[0].id]" routerDirection="forward">
+      <span class="icon"></span>
+      <img src="{{sermons[0].image}}">
+    </a>
+  </div>
+
+  <div class="intro">
+    <img src="{{series.image}}">
+    <h1>{{series.name}}</h1>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <ion-list class="list" no-padding>
+    <ion-item no-padding class="item item-content item-remove-animate item-avatar item-icon-right"
+      *ngFor="let sermon of sermons" type="item-text-wrap" [routerLink]="['/tabs/sermons', seriesId, sermon.id]"
+      routerDirection="forward">
+      <ion-label text-wrap>
+        <ion-text>
+          <h2>{{sermon.title}}</h2>
+        </ion-text>
+        <ion-text>
+          <p>{{sermon.date | date : fullDate}} | {{sermon.author}}</p>
+        </ion-text>
+      </ion-label>
+
+
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </ion-item>
+  </ion-list>
 </ion-content>

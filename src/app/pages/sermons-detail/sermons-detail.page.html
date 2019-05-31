@@ -1,9 +1,70 @@
-<ion-header>
+<ion-header class="header--transparent">
   <ion-toolbar>
-    <ion-title>sermons-detail</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" defaultHref="/tabs/sermons" text="Sermons"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/" routerDirection="forward">
+        <fa-icon [icon]="faHome" class="buttons--home"></fa-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title *ngIf="sermon; else blankModel">{{sermon.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content no-padding class="page_sermons page_detail" *ngIf="sermon; else blankModel">
+  <div class="video-container">
+    <iframe [src]="trustedVideoUrl" frameborder="0" width="560" height="315"></iframe>
+  </div>
 
+  <div class="article">
+    <h1>{{sermon.title}}</h1>
+
+    <div class="options">
+      <ul>
+        <li *ngIf="sermon.audio">
+          <div class="option_button" (click)="showPlayer()">AUDIO ONLY</div>
+        </li>
+        <li>
+          <div class="option_button" (click)="share()">SHARE</div>
+        </li>
+        <li *ngIf="sermon.content">
+          <div class="option_button" (click)="showContent()">TRANSCRIPT</div>
+        </li>
+        <li *ngIf="sermon.study">
+          <div class="option_button" (click)="showQuestions()">STUDY QUESTIONS</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- <ion-audio-track track="audioTrack" *ngIf="showAudioPlayer">
+      <div class="list list-inset audio-player">
+        <div class="item item-thumbnail-left">
+          <img src="{{audioTrack.art}}">
+          <h2>{{audioTrack.title}}</h2>
+          <p>{{audioTrack.artist}}</p>
+          <ion-audio-controls>
+            <a class="button button-icon icon" ion-audio-play></a>
+            <ion-spinner icon="ios">Loading</ion-spinner>
+          </ion-audio-controls>
+        </div>
+        <div class="item">
+          <ion-audio-progress-bar track="audioTrack" display-time></ion-audio-progress-bar>
+        </div>
+      </div>
+    </ion-audio-track> -->
+
+    <div *ngIf="!showStudy">
+      <hr>
+      <div [innerHTML]="sermon.content | hrefToJS" class="html_content"></div>
+    </div>
+
+    <div *ngIf="showStudy">
+      <hr>
+      <h3>Study Questions</h3>
+      <div [innerHTML]="sermon.study | hrefToJS" class="html_content"></div>
+    </div>
+  </div>
 </ion-content>

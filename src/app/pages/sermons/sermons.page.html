@@ -1,9 +1,35 @@
-<ion-header>
+<ion-header class="header--transparent">
   <ion-toolbar>
-    <ion-title>sermons</ion-title>
+    <ion-title>Sermons</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/" routerDirection="forward">
+        <fa-icon [icon]="faHome" class="buttons--home"></fa-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content no-padding class="page_sermons">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
+  <div class="featured" *ngIf="series">
+    <a href="#" [routerLink]="['/tabs/sermons', series[0].id, series[0].sermons[0].id]">
+      <img src="{{series[0].sermons[0].image}}" *ngIf="series != 'N/A'">
+    </a>
+  </div>
+
+  <h1>SERIES</h1>
+
+  <ion-list class="list" no-padding>
+    <ion-item no-padding class="item item-content item-remove-animate item-avatar item-icon-right"
+      *ngFor="let serie of series" type="item-text-wrap" [routerLink]="['/tabs/sermons', serie.id]"
+      routerDirection="forward">
+      <img src="{{serie.image}}" *ngIf="serie.image != 'N/A'">
+      <h2>{{serie.name}}</h2>
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </ion-item>
+  </ion-list>
 </ion-content>
