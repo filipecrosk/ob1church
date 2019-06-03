@@ -12,8 +12,7 @@
 
 <ion-content no-padding class="page_events">
   <!--slider section-->
-  <ion-slides id="home-slide-box" show-pager="true" auto-play="true" does-continue="true"
-    *ngIf="events; else blankModel">
+  <ion-slides id="home-slide-box" show-pager="true" auto-play="true" does-continue="true" *ngIf="events">
     <ion-slide no-padding *ngFor="let event of events">
       <ion-item button no-padding [routerLink]="['/tabs', 'events', event.id]" class="content" detail="false">
         <img src="{{event.image}}" *ngIf="event.image != 'N/A'">
@@ -21,9 +20,6 @@
     </ion-slide>
   </ion-slides>
   <!--end slider section-->
-
-  <ion-refresher pulling-text="Pull to refresh..." on-refresh="refresh()">
-  </ion-refresher>
 
   <ion-list class="events-list" no-padding>
     <ion-item no-padding class="events-list__item item-remove-animate item-icon-right" *ngFor="let event of events"

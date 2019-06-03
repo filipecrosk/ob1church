@@ -10,12 +10,12 @@
       </ion-button>
     </ion-buttons>
 
-    <ion-title *ngIf="series; else blankModel">{{series.name}}</ion-title>
+    <ion-title *ngIf="series">{{series.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content no-padding class="page_sermons page_series" *ngIf="series; else blankModel">
+<ion-content no-padding class="page_sermons page_series" *ngIf="series">
   <div class="cover" *ngIf="sermons">
     <a href="#" [routerLink]="['/tabs/sermons', seriesId, sermons[0].id]" routerDirection="forward">
       <span class="icon"></span>

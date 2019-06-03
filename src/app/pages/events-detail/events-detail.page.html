@@ -10,12 +10,12 @@
       </ion-button>
     </ion-buttons>
 
-    <ion-title *ngIf="event; else blankModel">{{event.title}}</ion-title>
+    <ion-title *ngIf="event">{{event.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content no-padding class="page_events page_detail" *ngIf="event; else blankModel">
+<ion-content no-padding class="page_events page_detail" *ngIf="event">
   <div class="cover">
     <img src="{{event.image}}" *ngIf="event.image != 'N/A'">
   </div>

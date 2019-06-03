@@ -10,11 +10,11 @@
       </ion-button>
     </ion-buttons>
 
-    <ion-title *ngIf="sermon; else blankModel">{{sermon.title}}</ion-title>
+    <ion-title *ngIf="sermon">{{sermon.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content no-padding class="page_sermons page_detail" *ngIf="sermon; else blankModel">
+<ion-content no-padding class="page_sermons page_detail" *ngIf="sermon">
   <div class="video-container">
     <iframe [src]="trustedVideoUrl" frameborder="0" width="560" height="315"></iframe>
   </div>

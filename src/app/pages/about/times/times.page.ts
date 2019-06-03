@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ModalController, Platform } from "@ionic/angular";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-
+import { SocialSharing } from "@ionic-native/social-sharing/ngx";
 import { ParkingPage } from "../../../modals/parking/parking.page";
 
 @Component({
@@ -14,7 +14,8 @@ export class TimesPage implements OnInit {
 
   constructor(
     public modalController: ModalController,
-    public platform: Platform
+    public platform: Platform,
+    private socialSharing: SocialSharing
   ) {}
 
   ngOnInit() {
@@ -53,5 +54,25 @@ export class TimesPage implements OnInit {
 
   openAndroidMap(targetDestinationLocation) {
     window.open("geo://32.745549,-117.246724?q=ob1church&zoom=15", "_system");
+  }
+
+  share() {
+    this.socialSharing
+      .share(
+        "Hey, come visit us at 4790 Santa Monica, Ocean Beach. Learn more",
+        "",
+        "img/share.jpg",
+        "http://ob1church.com"
+      ) // Share via native share sheet
+      .then(
+        function(result) {
+          // console.log('log - sharing success', result);
+          // Success!
+        },
+        function(err) {
+          // console.log('log - sharing error', err);
+          // An error occured. Show a message to the user
+        }
+      );
   }
 }
