@@ -10,6 +10,7 @@ import { StatusBar } from "@ionic-native/status-bar/ngx";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ParkingPageModule } from "./modals/parking/parking.module";
+import { SocialSharing } from "@ionic-native/social-sharing/ngx";
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,8 @@ import { ParkingPageModule } from "./modals/parking/parking.module";
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    SocialSharing
   ],
   bootstrap: [AppComponent]
 })

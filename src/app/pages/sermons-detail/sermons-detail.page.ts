@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { LoadingController } from "@ionic/angular";
 import { SafeResourceUrl, DomSanitizer } from "@angular/platform-browser";
+import { SocialSharing } from "@ionic-native/social-sharing/ngx";
 import { SermonsService } from "../../services/sermons.service";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 
@@ -24,7 +25,8 @@ export class SermonsDetailPage implements OnInit {
     public api: SermonsService,
     public loadingController: LoadingController,
     private route: ActivatedRoute,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    private socialSharing: SocialSharing
   ) {}
 
   ngOnInit() {
@@ -63,14 +65,22 @@ export class SermonsDetailPage implements OnInit {
   }
 
   share() {
-    // $cordovaSocialSharing
-    //   .share('Hey, take a look at this sermon', '', 'img/share.jpg', $scope.sermon.link) // Share via native share sheet
-    //   .then(function(result) {
-    //     console.log('log - sharing success', result);
-    //     // Success!
-    //   }, function(err) {
-    //     console.log('log - sharing error', err);
-    //     // An error occured. Show a message to the user
-    //   });
+    this.socialSharing
+      .share(
+        "Hey, take a look at this sermon",
+        null,
+        "img/share.jpg",
+        this.sermon.link
+      ) // Share via native share sheet
+      .then(
+        function(result) {
+          console.log("log - sharing success", result);
+          // Success!
+        },
+        function(err) {
+          console.log("log - sharing error", err);
+          // An error occured. Show a message to the user
+        }
+      );
   }
 }
