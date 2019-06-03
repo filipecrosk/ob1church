@@ -65,6 +65,11 @@ const routes: Routes = [
             path: "",
             loadChildren:
               "../pages/lifegroups/lifegroups.module#LifegroupsPageModule"
+          },
+          {
+            path: ":id",
+            loadChildren:
+              "../pages/lifegroups-detail/lifegroups-detail.module#LifegroupsDetailPageModule"
           }
         ]
       },

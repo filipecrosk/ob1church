@@ -15,10 +15,6 @@ const routes: Routes = [
   },
   { path: "give", loadChildren: "./pages/give/give.module#GivePageModule" },
   {
-    path: "lifegroups",
-    loadChildren: "./pages/lifegroups/lifegroups.module#LifegroupsPageModule"
-  },
-  {
     path: "sermons",
     loadChildren: "./pages/sermons/sermons.module#SermonsPageModule"
   },
@@ -31,6 +27,15 @@ const routes: Routes = [
     path: "sermons/:seriesId/:sermonId",
     loadChildren:
       "./pages/sermons-detail/sermons-detail.module#SermonsDetailPageModule"
+  },
+  {
+    path: "lifegroups",
+    loadChildren: "./pages/lifegroups/lifegroups.module#LifegroupsPageModule"
+  },
+  {
+    path: "lifegroups/:id",
+    loadChildren:
+      "./pages/lifegroups-detail/lifegroups-detail.module#LifegroupsDetailPageModule"
   },
   {
     path: "times",

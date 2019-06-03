@@ -19,25 +19,25 @@
   <div class="home__menu">
     <ul>
       <li>
-        <a href="#/tab/about/times" [routerLink]="['/tabs', 'times']">
+        <a href="#/tab/about/times" [routerLink]="['/tabs', 'times']" routerDirection="forward">
           <strong>SERVICES</strong>
           Time and location
         </a>
       </li>
       <li>
-        <a href="#/tab/sermons" [routerLink]="['/tabs', 'sermons']">
+        <a href="#/tab/sermons" [routerLink]="['/tabs', 'sermons']" routerDirection="forward">
           <strong>MESSAGES</strong>
           Watch and listen to past messages
         </a>
       </li>
       <li>
-        <a href="#/tab/lifegroups" ng-click="navigateTo('app.tab.lifegroups',true)">
+        <a href="#/tab/lifegroups" [routerLink]="['/tabs', 'lifegroups']" routerDirection="forward">
           <strong>LIFE GROUPS</strong>
           Get connected into community
         </a>
       </li>
       <li>
-        <a href="#/tab/give" ng-click="navigateTo('app.tab.give',true)">
+        <a href="#/tab/give" [routerLink]="['/tabs', 'give']" routerDirection="forward">
           <strong>GIVE</strong>
           Partner to impact
         </a>

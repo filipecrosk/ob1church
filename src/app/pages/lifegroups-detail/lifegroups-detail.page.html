@@ -1,0 +1,46 @@
+<ion-header class="header--transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" defaultHref="/tabs/lifegroups" text="Life Groups"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/" routerDirection="root">
+        <fa-icon [icon]="faHome" class="buttons--home"></fa-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title *ngIf="group">{{group.title}}</ion-title>
+    <ion-title *ngIf="!group">Life Groups</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content no-padding class="page_lifegroups page_detail" *ngIf="group; else blankModel">
+  <div class="cover">
+    <img src="/assets/img/lifegroups.png">
+  </div>
+
+  <div class="intro">
+    <img src="{{group.image}}" *ngIf="group.image != 'N/A'">
+    <h1>{{group.title}}</h1>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="article">
+    <p>
+      {{group.address}}
+    </p>
+    <p>
+      {{group.day}} | {{group.time}}
+    </p>
+    <p>
+      <strong>Leader</strong>
+      <br>
+      {{group.leader}}
+    </p>
+
+    <div class="bt_invite" (click)="share()">INVITE</div>
+  </div>
+</ion-content>

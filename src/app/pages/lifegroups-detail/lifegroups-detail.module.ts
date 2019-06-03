@@ -5,14 +5,14 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { IonicModule } from "@ionic/angular";
 
-import { LifegroupsPage } from "./lifegroups.page";
+import { LifegroupsDetailPage } from "./lifegroups-detail.page";
 
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 const routes: Routes = [
   {
     path: "",
-    component: LifegroupsPage
+    component: LifegroupsDetailPage
   }
 ];
 
@@ -24,6 +24,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     FontAwesomeModule
   ],
-  declarations: [LifegroupsPage]
+  declarations: [LifegroupsDetailPage]
 })
-export class LifegroupsPageModule {}
+export class LifegroupsDetailPageModule {}

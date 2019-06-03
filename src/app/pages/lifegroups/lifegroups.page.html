@@ -1,9 +1,36 @@
-<ion-header>
+<ion-header class="header--transparent">
   <ion-toolbar>
-    <ion-title>lifegroups</ion-title>
+    <ion-title>Life Groups</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/" routerDirection="root">
+        <fa-icon [icon]="faHome" class="buttons--home"></fa-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
 
+<ion-content no-padding class="page_lifegroups">
+  <div class="cover">
+    <img src="/assets/img/lifegroups.png">
+  </div>
+
+  <ion-list class="groups_list" no-padding>
+    <ion-item no-padding class="groups_list__item item-content item-remove-animate item-icon-right"
+      *ngFor="let group of groups" type="item-text-wrap" [routerLink]="['/tabs', 'lifegroups', group.id]">
+      <img src="{{group.image}}">
+      <ion-label text-wrap>
+        <ion-text>
+          <h2>{{group.title}}</h2>
+        </ion-text>
+        <ion-text>
+          <span>{{group.address}}<br>{{group.day}} | {{group.time}} </span>
+        </ion-text>
+      </ion-label>
+
+
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </ion-item>
+  </ion-list>
 </ion-content>
